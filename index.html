@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142b29">
+  <meta name="description" content="Videojuego educativo para aprender a interpretar el valor p durante una inspección de calidad.">
+  <title>Turno de inspección — Valor p</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Inspector de calidad, inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M20 3 34 8v10c0 9.4-5.8 15.1-14 19C11.8 33.1 6 27.4 6 18V8l14-5Z" fill="currentColor" opacity=".18"/><path d="M20 3 34 8v10c0 9.4-5.8 15.1-14 19C11.8 33.1 6 27.4 6 18V8l14-5Z" stroke="currentColor" stroke-width="2.2"/><path d="m13.5 20 4.3 4.1 9.1-9.4" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand-copy"><strong>INSPECTOR</strong><small>CONTROL DE CALIDAD</small></span>
+      </a>
+      <div class="topbar-meta"><span class="live-dot"></span> ALMACÉN CENTRAL <span class="meta-divider">/</span> MUELLE 04</div>
+      <div class="shift-pill"><span class="shift-icon">✦</span> TURNO DE CAPACITACIÓN</div>
+    </header>
+
+    <main>
+      <section class="screen intro-screen" id="intro-screen" aria-labelledby="intro-title">
+        <div class="intro-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> ESTADÍSTICA APLICADA · MISIÓN 01</div>
+          <h1 id="intro-title">¿Pasa el lote<br><em>o se queda?</em></h1>
+          <p class="intro-lede">El camión ya llegó. Analiza la muestra de cada lote y decide si hay evidencia para detenerlo.</p>
+
+          <div class="warehouse-scene" aria-label="Ilustración de un almacén con cajas y una inspectora" role="img">
+            <div class="scene-label"><span class="scene-label-dot"></span> ANDÉN DE RECEPCIÓN <b>04</b></div>
+            <svg viewBox="0 0 720 310" class="scene-art" aria-hidden="true">
+              <defs>
+                <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e4e9db"/><stop offset="1" stop-color="#cad6ca"/></linearGradient>
+                <linearGradient id="floor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d5d9cc"/><stop offset="1" stop-color="#b6c3b9"/></linearGradient>
+                <linearGradient id="boxA" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d98352"/><stop offset="1" stop-color="#b65b3d"/></linearGradient>
+                <linearGradient id="boxB" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e6b965"/><stop offset="1" stop-color="#cd9350"/></linearGradient>
+              </defs>
+              <rect width="720" height="234" fill="url(#wall)"/>
+              <path d="M0 234 720 197v113H0Z" fill="url(#floor)"/>
+              <path d="M0 40h720M0 110h720M0 180h720" stroke="#a6b6aa" stroke-width="5" opacity=".65"/>
+              <path d="M36 0v235M258 0v223M488 0v210M690 0v199" stroke="#47635b" stroke-width="9"/>
+              <path d="M34 63h225M34 135h225M34 204h225M260 65h227M260 132h227M260 200h227M490 68h199M490 133h199M490 198h199" stroke="#47635b" stroke-width="7"/>
+              <g opacity=".92"><path d="M64 26h74v34H64z" fill="#e6b965"/><path d="M150 23h83v37h-83z" fill="#ce7650"/><path d="M53 93h95v39H53z" fill="#ce7650"/><path d="M159 90h81v42h-81z" fill="#e6b965"/><path d="M60 160h80v41H60z" fill="#e6b965"/><path d="M151 158h90v43h-90z" fill="#cf7650"/>
+                <path d="M283 26h92v34h-92z" fill="#d98352"/><path d="M383 24h87v36h-87z" fill="#e6b965"/><path d="M277 93h82v39h-82z" fill="#e6b965"/><path d="M367 91h103v41H367z" fill="#ce7650"/><path d="M277 160h103v40H277z" fill="#ce7650"/><path d="M388 158h80v42h-80z" fill="#e6b965"/>
+                <path d="M516 28h77v35h-77z" fill="#e6b965"/><path d="M603 26h76v36h-76z" fill="#ce7650"/><path d="M516 95h89v36h-89z" fill="#ce7650"/><path d="M613 92h68v39h-68z" fill="#e6b965"/><path d="M517 161h68v38h-68z" fill="#e6b965"/><path d="M593 158h86v40h-86z" fill="#ce7650"/></g>
+              <path d="M0 242 718 209" stroke="#71887a" stroke-width="4"/>
+              <path d="M473 251h247v59H473z" fill="#263f3d"/><path d="M488 230h164v37H488z" fill="#d98452"/><path d="m488 230 79-27 85 27-81 26Z" fill="#e8a566"/><path d="M567 256v54" stroke="#a94f39" stroke-width="4"/>
+              <g transform="translate(371 158)"><ellipse cx="54" cy="137" rx="47" ry="8" fill="#64796f" opacity=".35"/><path d="M20 69h59l17 65H17z" fill="#397668"/><path d="m32 71-17 62H3l12-72 17-10" fill="#e4a17d"/><path d="m75 71 21 60 13-5-12-70-19-12" fill="#e4a17d"/><path d="M32 129h19v34H27zM68 129h18v34H63z" fill="#293b39"/><path d="M25 48c2-25 17-41 34-41 20 0 33 17 32 42l-9 30H30z" fill="#d9a37d"/><path d="M29 39c0-28 13-41 32-41 21 0 34 17 28 44-8-6-15-15-17-24-11 11-24 18-43 21z" fill="#233b39"/><path d="M42 59h11M69 59h10" stroke="#5f4139" stroke-width="2.4" stroke-linecap="round"/><path d="m46 49 5-2m18 0 6 2" stroke="#33413b" stroke-width="2" stroke-linecap="round"/><path d="M39 77h38v12H39z" fill="#e4b85f"/><path d="M46 82h24" stroke="#365b52" stroke-width="2"/></g>
+              <g transform="translate(95 235)"><path d="M0 26h198v13H0z" fill="#364c49"/><path d="M14 0h59v26H14z" fill="url(#boxA)"/><path d="m14 0 26-12 33 12-29 10z" fill="#e6a567"/><path d="M82 4h52v22H82z" fill="url(#boxB)"/><path d="m82 4 21-11 31 11-22 9z" fill="#f0d190"/><path d="M141 0h46v26h-46z" fill="url(#boxA)"/><path d="m141 0 20-11 26 11-24 9z" fill="#e5a064"/><circle cx="33" cy="48" r="8" fill="#293b39"/><circle cx="172" cy="48" r="8" fill="#293b39"/></g>
+              <path d="M526 292h126" stroke="#efc86d" stroke-width="4" stroke-dasharray="12 10" opacity=".9"/>
+            </svg>
+            <div class="scene-caption"><span>Tu puesto</span><strong>Inspección de entrada</strong></div>
+          </div>
+          <div class="intro-footnote"><span class="footnote-icon">ⓘ</span> Cada informe trae una muestra; la condición real se revela al final de la inspección.</div>
+        </div>
+
+        <aside class="briefing-card" aria-label="Reglas de la misión">
+          <div class="card-topline"><span>HOJA DE TURNO</span><span class="paperclip">✳</span></div>
+          <div class="briefing-title-row"><span class="briefing-icon">▤</span><div><h2>Tu criterio de inspección</h2><p>Hipótesis nula: el lote cumple la especificación.</p></div></div>
+          <div class="alpha-stamp"><span>UMBRAL DE SIGNIFICANCIA</span><strong>α = 0.05</strong></div>
+          <div class="rule-row reject-rule"><span class="rule-symbol">≤</span><div><strong>p ≤ 0.05</strong><small>Rechaza H₀ · detén el lote</small></div><span class="rule-arrow">↗</span></div>
+          <div class="rule-row release-rule"><span class="rule-symbol">&gt;</span><div><strong>p &gt; 0.05</strong><small>No rechaces H₀ · libera el lote</small></div><span class="rule-arrow">↗</span></div>
+          <p class="p-definition"><b>El valor p</b> mide qué tan compatible es la muestra con H₀: la probabilidad de obtener un resultado tan extremo o más si H₀ fuera cierta. No es la probabilidad de que el lote esté defectuoso.</p>
+
+          <details class="book-example">
+            <summary>Ver el ejemplo del libro <span>+</span></summary>
+            <div class="example-body">El libro obtiene <b>p = 0.0031</b> (Z ≈ −2.741) para una prueba unilateral. Como p ≤ 0.05, se rechaza H₀. En este turno, el laboratorio ya entrega p calculada.</div>
+          </details>
+          <button class="primary-button" id="start-button" type="button">Iniciar inspección <span aria-hidden="true">→</span></button>
+          <div class="mission-meta"><span><i class="meta-dot teal-dot"></i> 8 lotes</span><span>2 decisiones posibles</span><span>sin límite de tiempo</span></div>
+        </aside>
+      </section>
+
+      <section class="screen game-screen is-hidden" id="game-screen" aria-labelledby="game-title">
+        <div class="game-heading">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span> RECEPCIÓN DE MERCANCÍA · MUELLE 04</div><h1 id="game-title">Revisión <em>en curso</em></h1></div>
+          <div class="score-card"><span class="score-icon">✦</span><div><small>PUNTOS DEL TURNO</small><strong id="score-value">0</strong></div><span class="score-unit">pts</span></div>
+        </div>
+
+        <div class="progress-row"><div class="progress-label"><span>LOTE <b id="round-number">01</b> <span class="progress-of">/ 08</span></span><span class="progress-text" id="progress-text">0 de 8 inspeccionados</span></div><div class="progress-track" role="progressbar" aria-label="Progreso del turno" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0"><span id="progress-fill"></span></div></div>
+
+        <div class="workbench">
+          <article class="inspection-card" aria-live="polite">
+            <div class="inspection-top"><span class="inspection-tag"><i></i> LOTE EN REVISIÓN</span><span class="batch-code" id="batch-code">L-000</span></div>
+            <div class="product-row"><div class="product-art" id="product-art" aria-hidden="true">📦</div><div class="product-info"><span class="product-category" id="product-category">EMPAQUE</span><h2 id="product-name">Nombre del producto</h2><p id="product-sample">30 unidades · inspección de muestra</p></div><div class="scan-stamp"><span>ESTADO</span><b>EN ANÁLISIS</b></div></div>
+
+            <div class="hypothesis-box"><div class="hypothesis-head"><span class="tiny-heading">PLANTEAMIENTO DE LA PRUEBA</span><span class="test-badge">PRUEBA DE HIPÓTESIS</span></div><div class="hypothesis-line"><span class="hypothesis-symbol">H₀</span><p>El lote <b>cumple</b> la especificación de calidad.</p></div><div class="hypothesis-line"><span class="hypothesis-symbol alternative">H₁</span><p>El lote <b>no cumple</b> la especificación.</p></div></div>
+
+            <div class="lab-report"><div class="lab-report-head"><div><span class="tiny-heading">INFORME DEL LABORATORIO</span><h3>Resultado de la muestra</h3></div><span class="report-check">✓</span></div><div class="p-value-row"><div><span class="p-label">VALOR p</span><strong class="p-value" id="p-value">0.000</strong></div><div class="alpha-box"><span>α acordada</span><strong>0.05</strong></div><div class="evidence-note" id="evidence-note"><span class="evidence-dot"></span><span>Calculando<br>evidencia</span></div></div><div class="p-scale" aria-label="Escala orientativa del valor p hasta 0.20; el umbral alfa 0.05 está marcado"><div class="scale-track"><span class="scale-fill" id="scale-fill"></span><span class="alpha-marker"><i></i><b>α = 0.05</b></span></div><div class="scale-labels"><span>0 · evidencia contra H₀</span><span>0.20 o más</span></div></div><div class="decision-hint" id="decision-hint"><span class="hint-icon">↳</span><span>Interpreta el informe para decidir.</span></div></div>
+
+            <div class="decision-area" id="decision-area"><div class="decision-prompt"><span class="decision-prompt-icon">?</span><div><strong>¿Qué decides, inspector?</strong><small>Elige según la evidencia y tu nivel α.</small></div></div><div class="decision-buttons"><button class="decision-button reject-button" data-decision="reject" type="button"><span class="button-icon">×</span><span><b>Rechazar el lote</b><small>Rechazar H₀ y detener</small></span><kbd>1</kbd></button><button class="decision-button release-button" data-decision="release" type="button"><span class="button-icon">✓</span><span><b>No rechazar H₀</b><small>Liberar el lote</small></span><kbd>2</kbd></button></div><p class="decision-disclaimer">“No rechazar” no demuestra que H₀ sea cierta; indica que la muestra no aporta evidencia suficiente para rechazarla.</p></div>
+
+            <div class="feedback-panel is-hidden" id="feedback-panel" aria-live="assertive"><div class="feedback-title-row"><span class="feedback-mark" id="feedback-mark">✓</span><div><span class="feedback-kicker" id="feedback-kicker">DECISIÓN REGISTRADA</span><h3 id="feedback-title">Resultado</h3></div><strong class="points-change" id="points-change">+100</strong></div><p class="feedback-copy" id="feedback-copy"></p><div class="feedback-fact" id="feedback-fact"></div><button class="primary-button next-button" id="next-button" type="button">Siguiente lote <span aria-hidden="true">→</span></button></div>
+          </article>
+
+          <aside class="field-guide">
+            <div class="guide-heading"><span class="guide-icon">✳</span><div><span class="tiny-heading">RECORDATORIO</span><h2>Cómo leer p</h2></div></div>
+            <p>Un p pequeño significa que la muestra sería poco común si el lote sí cumpliera H₀.</p>
+            <div class="guide-rule"><span>p ≤ α</span><b>Rechaza H₀</b></div><div class="guide-rule"><span>p &gt; α</span><b>No rechaces H₀</b></div>
+            <div class="guide-divider"></div><div class="outcomes-title">CUANDO CONOZCAS LA REALIDAD</div>
+            <div class="outcome-row"><span class="outcome-chip type-one">I</span><p><b>Error tipo I</b><br>Rechazas H₀ verdadera.</p></div>
+            <div class="outcome-row"><span class="outcome-chip type-two">II</span><p><b>Error tipo II</b><br>No rechazas H₀ falsa.</p></div>
+            <div class="guide-bottom"><span>La prueba orienta.</span><strong>La muestra no da certeza.</strong></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="screen results-screen is-hidden" id="results-screen" aria-labelledby="results-title">
+        <div class="results-card"><div class="results-spark" aria-hidden="true">✳</div><div class="eyebrow centered-eyebrow"><span class="eyebrow-line"></span> FIN DEL TURNO <span class="eyebrow-line"></span></div><h1 id="results-title">Turno <em>cerrado</em></h1><p class="results-lede" id="results-lede">Has revisado todos los lotes del muelle.</p><div class="final-score"><span>PUNTUACIÓN FINAL</span><strong id="final-score">0</strong><small>puntos</small></div><div class="results-stats"><div><strong id="stat-correct">0/8</strong><span>decisiones acertadas</span></div><div><strong id="stat-type-one">0</strong><span>errores tipo I</span></div><div><strong id="stat-type-two">0</strong><span>errores tipo II</span></div></div><div class="results-note"><span>↗</span><p>Recuerda: un valor p no indica la probabilidad de que H₀ sea verdadera. Cuantifica qué tan extremo sería el resultado si H₀ lo fuera.</p></div><button class="primary-button replay-button" id="replay-button" type="button">Volver a inspeccionar <span aria-hidden="true">↻</span></button></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>INSPECTOR DE CALIDAD <i>·</i> ESTADÍSTICA PARA DECIDIR</span><span>FORMACIÓN DE OPERADORES <i>·</i> 2026</span></footer>
+  </div>
+</body>
+</html>
